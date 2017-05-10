@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 /**
  * Class representing the Hell Triangle concept with
  * matrix's attribute to store the data and
@@ -65,8 +67,14 @@ class HellTriangle{
      * @returns {number}
      */
     public calculateMaxTotal(){
+        let initialTime = moment();
+
         this.maxTotal = 0;
-        return this.sumMaximumRecursive(0,0)
+        let result = this.sumMaximumRecursive(0,0);
+        let finalTime = moment();
+        let diff = moment.duration(finalTime.diff(initialTime));
+        console.log(diff._milliseconds + ' milliseconds');
+        return result
     }
 }
 

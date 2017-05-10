@@ -13,6 +13,7 @@
   "dependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.3.0",
+    "moment": "^2.18.1",
     "ts-node": "^3.0.4",
     "typings": "^2.1.1"
   },

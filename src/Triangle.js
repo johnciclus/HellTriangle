@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var moment = require("moment");
 /**
  * Class representing the Hell Triangle concept with
  * matrix's attribute to store the data and
@@ -63,8 +64,13 @@ var HellTriangle = (function () {
      * @returns {number}
      */
     HellTriangle.prototype.calculateMaxTotal = function () {
+        var initialTime = moment();
         this.maxTotal = 0;
-        return this.sumMaximumRecursive(0, 0);
+        var result = this.sumMaximumRecursive(0, 0);
+        var finalTime = moment();
+        var diff = moment.duration(finalTime.diff(initialTime));
+        console.log(diff._milliseconds + ' milliseconds');
+        return result;
     };
     return HellTriangle;
 }());
